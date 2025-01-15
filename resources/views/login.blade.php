@@ -41,19 +41,12 @@
         <h3 class="text-center mb-4">Admin</h3>
         <form method="POST" action="{{ route('login') }}">
             <div class="mb-3">
-                <label for="email" class="form-label">Username</label>
+                <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" required autofocus>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div>
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember" class="form-check-label">Remember Me</label>
-                </div>
-                <a href="#" class="text-decoration-none">Forgot Password?</a>
             </div>
             <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
