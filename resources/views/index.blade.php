@@ -47,7 +47,7 @@
         <!-- Bagian Input Link -->
         <div class="card mb-4">
             <div class="card-body">
-                <form id="web-checker-form">
+                <form action="{{ route('scrape') }}" id="web-checker-form">
                     <div class="mb-3">
                         <label for="inputLink" class="form-label">Masukkan URL Situs Web</label>
                         <input type="url" class="form-control" id="inputLink" name="inputLink" placeholder="https://contoh.com" required>
