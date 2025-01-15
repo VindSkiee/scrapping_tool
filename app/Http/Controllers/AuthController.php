@@ -26,13 +26,8 @@ class AuthController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             $user = Auth::user(); // Ambil data user yang login
             session(['user_id' => $user->id]); // Simpan user_id ke session
-        
-            // Periksa role user
-            if ($user->role === 'admin') {
-                return redirect()->route('admin.dashboard'); // Redirect ke dashboard admin
-            }
-        
-            return redirect()->route('home'); // Redirect ke dashboard user
+            
+            return redirect()->route('index'); // Redirect ke dashboard user
         } else{
             return back()->withErrors(['email' => 'Email or password is wrong.'])->withInput();
         }
