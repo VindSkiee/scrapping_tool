@@ -41,8 +41,8 @@
         <h3 class="text-center mb-4">Admin</h3>
         <form method="POST" action="{{ route('login') }}">
             <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required autofocus>
+                <label for="name" class="form-label">Username</label>
+                <input type="email" class="form-control" id="name" name="name" required autofocus>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
