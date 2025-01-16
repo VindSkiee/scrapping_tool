@@ -160,15 +160,18 @@
     <div class="right-container">
         <div class="login-box">
             <!-- Tambahkan gambar desain keren di sini -->
-            <img src="{{ asset('images/logo.png') }}" alt="Desain Keren" style="width: 30%; margin-bottom: 20px; border-radius: 10px;">  <!-- Gantilah path ke gambar desain Anda -->
+            <img src="{{ asset('images/logo.png') }}" alt="Desain Keren" style="width: 100%; margin-bottom: 20px; border-radius: 10px;">  <!-- Gantilah path ke gambar desain Anda -->
             <h3>Welcome back</h3>
             <p>Please log in to your account</p>
             <form method="POST" action="{{ route('login') }}">
                 @csrf
-                <input type="text" class="form-control" name="username" placeholder="Username" required>
-                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                <input type="text" class="form-control" name="username" placeholder="User Name" required>
+                <input type="password" class="form-control" name="password" placeholder="Pass Word" required>
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
+            <div class="nav-links">
+                <a href="#">Login</a>
+            </div>
         </div>
     </div>
 </body>
