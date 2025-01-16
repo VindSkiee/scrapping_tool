@@ -42,7 +42,7 @@
         <form method="POST" action="{{ route('login') }}">
             <div class="mb-3">
                 <label for="name" class="form-label">Username</label>
-                <input type="email" class="form-control" id="name" name="name" required autofocus>
+                <input type="name" class="form-control" id="name" name="name" required autofocus>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
