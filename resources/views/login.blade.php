@@ -39,7 +39,7 @@
 <body>
     <div class="login-container">
         <h3 class="text-center mb-4">Admin</h3>
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login.index') }}">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Username</label>

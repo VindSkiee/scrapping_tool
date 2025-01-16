@@ -9,7 +9,7 @@ Route::get('/a', function () {
 });
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login.index']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/index',[ScrapController::class, 'showIndex'])->name('index');
