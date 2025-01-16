@@ -67,6 +67,7 @@
                             <tr>
                                 <th>Judul</th>
                                 <th>Link</th>
+                                <th>backdoor</th>
                                 <th>Deskripsi</th>
                                 <th>Level</th>
                                 <th>Waktu</th>
@@ -100,6 +101,7 @@
             const newRow = `<tr>
                 <td>Judul Dinamis</td>
                 <td><a href="${inputLink}" target="_blank">${inputLink}</a></td>
+                <td><td>
                 <td>Deskripsi yang dihasilkan untuk ${inputLink}</td>
                 <td><span class="badge bg-danger">Tinggi</span></td>
                 <td>${new Date().toLocaleTimeString('id-ID')}</td>
