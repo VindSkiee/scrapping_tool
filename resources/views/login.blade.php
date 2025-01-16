@@ -2,174 +2,167 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+        }
+        section {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
             height: 100vh;
-            background-color: #f9f9fb;
-        }
-
-        /* Bagian kiri (gambar) */
-        .left-container {
-            flex: 1;
-            background: linear-gradient(135deg, rgba(104, 195, 255, 0.8), rgba(0, 97, 175, 0.8)),
-                        url('path/to/your/background-image.png') no-repeat center center; /* Tambahkan gambar latar belakang */
+            background: url('/images/bg.jpg') no-repeat;
             background-size: cover;
+            background-position: center;
+            animation: animateBg 5s linear infinite;
+        }
+
+        @keyframes animateBg {
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .login-box{
             position: relative;
+            width: 400px;
+            height: 450px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .5);
+            border-radius: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            backdrop-filter: blur(15px);
+        }
+        h2 {
+            font-size: 2em;
+            color: #fff;
             text-align: center;
         }
-
-        .left-container h1 {
-            font-size: 48px;
-            font-weight: bold;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
+        .input-box{
+            position: relative;
+            width: 310px;
+            margin: 30px 0;
+            border-bottom: 2px solid #fff;
+        }
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
         }
 
-        .left-container p {
-            font-size: 18px;
-            font-weight: 300;
-            max-width: 400px;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        .input-box input:focus~label,
+        .input-box input:valid~label {
+            top: -5px;
+
         }
 
-        /* Bagian kanan (form login) */
-        .right-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #ffffff;
-            padding: 40px;
-        }
-
-        /* Kotak login */
-        .login-box {
-            background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            padding: 40px;
+        .input-box input {
             width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .login-box h3 {
-            font-size: 26px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .login-box p {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 20px;
-        }
-
-        /* Input dan tombol */
-        .form-control {
-            border-radius: 25px;
-            height: 45px;
-            padding: 10px 20px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-        }
-
-        .btn-primary {
-            border-radius: 25px;
-            height: 45px;
-            background: linear-gradient(135deg, #68c3ff, #0061af);
+            height: 50px;
+            background: transparent;
             border: none;
-            font-weight: bold;
-            text-transform: uppercase;
+            outline: none;
+            font-size: 1em;
+            color: #fff;
+            padding: 0 35px 0 5px;
+        }
+        .input-box .icon{
+            position: absolute;
+            right: 8px;
+            color: #fff;
+            font-size: 1.2em;
+            line-height: 57px;
+        }
+        .remember-forgot {
+            margin: -15px 0 15px;
+            font-size: .9em;
+            color: #fff;
+            justify-content: space-between;
+        }
+        .remember-forgot label input {
+            margin-right: 3px;
+        }
+        .remember-forgot a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+        button {
             width: 100%;
-            color: white;
-            transition: all 0.3s;
+            height: 40px;
+            background: #fff;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 1em;
+            color: #000;
+            font-weight: 500;
         }
 
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #4ea3df, #004c8a);
-            transform: translateY(-2px);
+        .register-link {
+            font-size: .9em;
+            color: #fff;
+            text-align: center;
+            margin: 25px 0 10px;
         }
 
-        /* Teks tambahan */
-        .forgot-link {
-            display: block;
-            text-align: right;
-            font-size: 12px;
-            color: #0061af;
-            text-decoration: none;
-            margin-top: -10px;
-            margin-bottom: 20px;
-        }
-
-        .forgot-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Link navigasi */
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .nav-links a {
-            font-size: 14px;
-            color: #0061af;
-            text-decoration: none;
-        }
-
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .left-container {
-                display: none;
+        @media (max-width: 360px){
+            .login-box {
+                width: 100%;
+                height: 100vh;
+                border: none;
+                border-radius: 0;
             }
-            .right-container {
-                flex: 1 1 100%;
+
+            .input-box {
+                width: 290px;
+
             }
         }
+
     </style>
 </head>
 <body>
-    <!-- Bagian Kiri -->
-    <div class="left-container">
-        <div>
-            <!-- Tambahkan gambar logo di sini -->
-            <img src="{{ asset('images/csirt.png') }}" alt="Logo" style="max-width: 150px; margin-bottom: 20px;">  <!-- Gantilah path ke gambar logo Anda -->
-            <h1>Welcome to CSIRT Purwakarta</h1>
-        </div>
-    </div>
+    <section>
 
-    <!-- Bagian Kanan -->
-    <div class="right-container">
-        <div class="login-box">
-            <!-- Tambahkan gambar desain keren di sini -->
-            <img src="{{ asset('images/logo.png') }}" alt="Desain Keren" style="width: 30%; margin-bottom: 20px; border-radius: 10px;">  <!-- Gantilah path ke gambar desain Anda -->
-            <h3>Welcome back</h3>
-            <p>Please log in to your account</p>
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <input type="text" class="form-control" name="username" placeholder="User Name" required>
-                <input type="password" class="form-control" name="password" placeholder="Pass Word" required>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
+   <div class="login-box">
+    <form action="">
+        <h2>Login</h2>
+        <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="name" required>
+            <label>Username</label>
         </div>
+        <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input type="password" required>
+            <label>Password</label>
+        </div>
+        <div class="remember-forgot">
+            <label><input type="checkbox">Remember me</label>
+        </div>
+        <button type="submit">Login</button>
+    </form>
     </div>
+    </section>
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

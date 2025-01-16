@@ -25,13 +25,13 @@ class AuthController extends Controller
 
         if (Auth::attempt($request->only('name', 'password'))) {
             $user = Auth::user(); // Ambil data user yang login
-            
+
             return redirect()->route('index'); // Redirect ke dashboard user
         } else{
             return back()->withErrors(['name' => 'Username atau password salah.'])->withInput();
         }
     }
-            
+
     // Logout
     public function logout()
     {

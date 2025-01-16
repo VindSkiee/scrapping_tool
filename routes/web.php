@@ -5,11 +5,12 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ScrapController;
 
 Route::get('/a', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/index',[ScrapController::class, 'showIndex'])->name('index');
